@@ -1,4 +1,7 @@
-<h2>Productos</h2>
+
+<div class="card-content container">
+<h2 class="center">Productos</h2>
+<a routerLink="/administracion/crear-producto" class="btn-small"><i class="material-icons left">library_add</i>Crear Producto</a>
 <table class="table responsive">
     <thead>
         <tr>
@@ -20,8 +23,9 @@
             <td>{{p.Categoria}}</td>
             <td><img src="{{p.Imagen}}" class="imgProducto"></td>
             <td>{{p.Descripcion}}</td>
-            <td><a routerLink="/administracion/editar-producto/{{p.Id}}" class="btn">Editar</a></td>
-            <td><a routerLink="/administracion/eliminar-producto/{{p.Id}}" class="btn btn-danger">eliminar</a></td>
+            <td><a routerLink="/administracion/editar-producto/{{p.Id}}" class="btn"><i class="material-icons left">edit</i>Editar</a></td>
+            <td><a routerLink="/administracion/eliminar-producto/{{p.Id}}" class="btn red darken-4"><i class="material-icons left">delete_forever</i>Eliminar</a></td>
         </tr>
     </tbody>
 </table>
+</div>

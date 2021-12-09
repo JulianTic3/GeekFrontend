@@ -1,6 +1,9 @@
 export class ModeloProducto{
-    id?:string;
-    nombre?:string;
-    precio?:number;
-    imagen?:string;
+    Id?:string;
+    Nombre?:string;
+    Precio?:number;
+    Stock?:number;
+    Categoria?:string;
+    Imagen?:string;
+    Descripcion?:string;
 }

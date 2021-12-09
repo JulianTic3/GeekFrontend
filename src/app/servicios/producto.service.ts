@@ -11,7 +11,7 @@ export class ProductoService {
   url='http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-  ObtenerRegistros():Observable<ModeloProducto[]> {
-    return this.http.get<ModeloProducto[]>(`${this.url}/productos `);
+  ConsultarProductos():Observable<ModeloProducto[]> {
+    return this.http.get<ModeloProducto[]>(`${this.url}/productos`);
   }
 }

@@ -39,7 +39,7 @@ const routes: Routes = [
     component: BuscarProductoComponent
   },
   {
-    path: "eliminar-producto",
+    path: "eliminar-producto/:id",
     component: EliminarProductoComponent
   },
 ];

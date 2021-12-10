@@ -12,3 +12,6 @@ h1{
 font-weight: 800;
 color: rgb(44, 90, 218);
 }
+img {
+  max-width: 120px;
+}

@@ -18,11 +18,11 @@ h3{
     color: blue;
 }
 .card{
-   min-height : 450px;
+   min-height : 400px;
 }
 .imgCard{
    
-    height: 260px;
+    height: 200px;
 }
 .card{
 box-shadow: 01px 1px 10px rgba(0,0,0,0.4);

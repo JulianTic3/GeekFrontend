@@ -2,33 +2,33 @@
     <div class="col s12 l6 offset-l3">
       <div class="card blue lighten-5">
         <div class="card-content">
-          <h3 class="center">Editar Producto</h3>
+          <h3 class="center"><i class="material-icons yellow darken-2">draw</i>Editar Producto</h3>
           <form [formGroup]="fgValidador" (ngSubmit)="EditarProducto()" method="post">
             <input type="hidden" formControlName="Id">
             <div class="row">
               <div class="input-field col s4">
                 <input formControlName="Nombre" id="Nombre" type="text" class="activate">
-                <label for="Nombre">Nombre</label>
+                <label for="Nombre" class="active"><i class="material-icons left">create</i>Nombre</label>
               </div>
               <div class="input-field col s4">
                 <input formControlName="Precio" id="Precio" type="number" class="activate">
-                <label for="Precio">Precio</label>
+                <label for="Precio" class="active"><i class="material-icons left">attach_money</i>Precio</label>
               </div>
               <div class="input-field col s4">
                 <input formControlName="Stock" id="Stock" type="number" class="activate">
-                <label for="Stock">Stock</label>
+                <label for="Stock" class="active"><i class="material-icons left">local_shipping</i>Stock</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s6">
                 <input formControlName="Categoria" id="Categoria" type="text" class="activate">
-                <label for="Categoria">Categoria</label>
+                <label for="Categoria" class="active"><i class="material-icons left">summarize</i>Categoria</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s6">
                 <input formControlName="Imagen" id="Imagen" type="text" class="activate">
-                <label for="Imagen">Imagen</label>
+                <label for="Imagen" class="active"><i class="material-icons left">add_photo_alternate</i>Imagen</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s12">
                 <input formControlName="Descripcion" id="Descripcion" type="text" class="activate">
-                <label for="Descripcion">Descripcion</label>
+                <label for="Descripcion" class="active"><i class="material-icons left">description</i>Descripcion</label>
               </div>
             </div>
             <div class="row">

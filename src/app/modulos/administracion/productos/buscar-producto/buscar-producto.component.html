@@ -1,42 +1,31 @@
-<div class="card-content container">
-    <h2 class="center">Productos</h2>
-    <div class="row">
-        <div class="col s12 l6 offset-l10">
-            <a routerLink="/administracion/crear-producto" class="btn waves-effect cyan waves-light"><i
-                    class="material-icons left">library_add</i>Crear Producto</a>
-        </div>
-    </div>
-    <table class="table responsive">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Categoria</th>
-                <th>Imagen</th>
-                <th>Descripcion</th>
-                <th>Edicion</th>
-                <th>Eliminación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor='let p of ListaProductos'>
-                <td>{{p.Nombre}}</td>
-                <td>{{p.Precio}}</td>
-                <td>{{p.Stock}}</td>
-                <td>{{p.Categoria}}</td>
-                <td><img src="{{p.Imagen}}" class="imgProducto"></td>
-                <td>{{p.Descripcion}}</td>
-                <td>
-                    <a routerLink="/administracion/editar-producto/{{p.Id}}"
-                        class="btn-floating btn-large waves-effect waves-light cyan"><i
-                            class="material-icons left">edit</i></a>
-                </td>
-                <td><a routerLink="/administracion/eliminar-producto/{{p.Id}}"
-                        class="btn-floating btn-large waves-effect waves-light red"><i
-                            class="material-icons left">delete_forever</i></a></td>
-            </tr>
-        </tbody>
-    </table>
+
+<div class="card-content">
+<h2 class="center"><i class="material-icons yellow darken-2">dashboard</i>Productos</h2>
+<a routerLink="/administracion/crear-producto" class="btn-small aCreate yellow darken-2"><i class="material-icons left">library_add</i>Crear Producto</a>
+<table class="table responsive inventario">
+    <thead>
+        <tr class="grey lighten-2">
+            <th><i class="material-icons left">create</i>Nombre</th>
+            <th><i class="material-icons left">attach_money</i>Precio</th>
+            <th><i class="material-icons left">inventory</i>Stock</th>
+            <th><i class="material-icons left">summarize</i>Categoria</th>
+            <th><i class="material-icons left">add_photo_alternate</i>Imagen</th>
+            <th><i class="material-icons left">description</i>Descripcion</th>            
+            <th><i class="material-icons left">edit</i>Edicion</th>
+            <th><i class="material-icons left">delete_forever</i>Eliminación</th>
+        </tr>        
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let p of ListaProductos'>
+            <td>{{p.Nombre}}</td>
+            <td>{{p.Precio}}</td>
+            <td>{{p.Stock}}</td>
+            <td>{{p.Categoria}}</td>
+            <td><img src="{{p.Imagen}}" class="imgProducto"></td>
+            <td class="description">{{p.Descripcion}}</td>
+            <td><a routerLink="/administracion/editar-producto/{{p.Id}}" class="btn yellow darken-2"><i class="material-icons left">edit</i>Editar</a></td>
+            <td><a routerLink="/administracion/eliminar-producto/{{p.Id}}" class="btn red darken-4"><i class="material-icons left">delete_forever</i>Eliminar</a></td>
+        </tr>
+    </tbody>
+</table>
 </div>
-<br>

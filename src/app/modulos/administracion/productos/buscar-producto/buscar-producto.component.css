@@ -1,3 +1,12 @@
 .imgProducto {
-    width: 150px;
+    width: 100px;
+}
+
+h2 i {
+    font-size: 80%;
+}
+
+.aCreate  {
+    margin-bottom:1em;
+    margin-left:1em;
 }

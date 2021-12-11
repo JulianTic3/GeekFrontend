@@ -6,6 +6,7 @@ import { EditarPersonaComponent } from './personas/editar-persona/editar-persona
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
 import { BuscarProductoComponent } from './productos/buscar-producto/buscar-producto.component';
 import { CrearProductoComponent } from './productos/crear-producto/crear-producto.component';
+import { DetallesProductoComponent } from './productos/detalles-producto/detalles-producto.component';
 import { EditarProductoComponent } from './productos/editar-producto/editar-producto.component';
 import { EliminarProductoComponent } from './productos/eliminar-producto/eliminar-producto.component';
 
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: "eliminar-producto/:id",
     component: EliminarProductoComponent
+  },
+  {
+    path: "detalles-producto/:id",
+    component: DetallesProductoComponent
   },
 ];
 

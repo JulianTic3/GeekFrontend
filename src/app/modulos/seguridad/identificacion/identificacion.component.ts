@@ -11,15 +11,21 @@ import { Router } from '@angular/router';
 })
 export class IdentificacionComponent implements OnInit {
 
+siteKey:string="";  
+
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
-    'clave': ['', [Validators.required]]
+    'clave': ['', [Validators.required]],
+    'captcha': ['', [Validators.required]]
+
   });
 
   constructor(private fb: FormBuilder,
     private servicioSeguridad: SeguridadService,
-    private router: Router) { }
-
+    private router: Router) { 
+      this.siteKey="6LfhNJYdAAAAAOA5Byck1-oehloCvwK_yfJpBuDu";
+     }
+      
   ngOnInit(): void {
   }
 

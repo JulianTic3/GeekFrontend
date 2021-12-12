@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloProducto } from 'src/app/modelos/producto.modelo';
 import { ProductoService } from 'src/app/servicios/producto.service';
+declare const M: any;
 
 @Component({
   selector: 'app-inicio',
@@ -8,10 +9,21 @@ import { ProductoService } from 'src/app/servicios/producto.service';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  ngAfterViewInit() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems);
+    var elem = document.querySelectorAll('.carousel');
+    var instance = M.Carousel.init(elem);
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  };
 
   ListaProductos: ModeloProducto[] = [];
 
-  constructor(private servicioProducto: ProductoService) { }
+
+  constructor(private servicioProducto: ProductoService) {
+
+   }
 
   ngOnInit(): void {
     this.ObtenerListaProductos();

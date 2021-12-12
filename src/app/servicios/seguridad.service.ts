@@ -73,4 +73,22 @@ export class SeguridadService {
       return '';
     }
   }
+  ObtenerId() {
+    let datosString = localStorage.getItem("datosSesion");
+    if (datosString) {
+      let datos = JSON.parse(datosString);
+      return datos.datos.id;
+    } else {
+      return '';
+    }
+  }
+  ObtenerNombre() {
+    let datosString = localStorage.getItem("datosSesion");
+    if (datosString) {
+      let datos = JSON.parse(datosString);
+      return datos.datos.nombre;
+    } else {
+      return '';
+    }
+  }
 }

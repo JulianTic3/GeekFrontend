@@ -30,4 +30,25 @@ export class AdministracionService {
         headers: new HttpHeaders(),
       })
   }
+
+  EditarUsuario(id: string, tipo: string, numero: string, nombre: string, apellidos: string, correo: string, direccion: string, ciudad: string, pais: string, celular: string, nto: Date): Observable<ModeloPersona> {
+    return this.http.patch<ModeloPersona>(`${this.url}/personas/${id}`, {
+      TipoDocumento: tipo,
+      NumeroDocumento: numero,
+      Nombre: nombre,
+      Apellidos: apellidos,
+      Correo: correo,
+      Direccion: direccion,
+      Ciudad: ciudad,
+      Pais: pais,
+      FechaNacimiento: nto,
+      Celular: celular
+    },
+      {
+        headers: new HttpHeaders(),
+      })
+  }
+  ConsultarPersonaPorId(id: string): Observable<ModeloPersona> {
+    return this.http.get<ModeloPersona>(`${this.url}/personas/${id}`);
+  }
 }

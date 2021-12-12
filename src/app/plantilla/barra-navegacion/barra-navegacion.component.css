@@ -1,3 +1,22 @@
 #logo{
   width: 70px;
 }
+.sidenav-trigger{
+  text-align: center;
+  height: 40px;
+  margin-top: 15px;
+  color: rgb(251, 249, 249);
+  font-size: x-large;
+}
+
+p{
+  text-align: center;
+}
+
+h4{
+  font-weight: 500;
+}
+
+#slide-out{
+  background-color: rgb(91, 208, 243);
+}

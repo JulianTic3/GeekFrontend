@@ -16,7 +16,7 @@ siteKey:string="";
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
     'clave': ['', [Validators.required]],
-    'captcha': ['', [Validators.required]]
+    'recaptcha': ['', [Validators.required]]
 
   });
 

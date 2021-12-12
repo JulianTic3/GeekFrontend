@@ -27,8 +27,8 @@
           class="col s6 m4 l3"
           routerLink="/administracion/detalles-producto/{{ p.Id }}"
         >
-          <div class="card">
-            <div class="card-image">
+          <div class="card blue darken-2">
+            <div class="card-image white darken-2">
               <img src="{{ p.Imagen }}" class="imgCard" />
 
               <a
@@ -43,7 +43,7 @@
               >
             </div>
             <div class="card-content">
-              <h6 class="blue-text text-darken-1 center">{{ p.Nombre }}</h6>
+              <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
               <h6 class="center">{{ p.Precio | currency }}</h6>
               <br />
               <p class="center">{{ p.Descripcion }}</p>

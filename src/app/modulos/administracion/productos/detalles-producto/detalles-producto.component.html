@@ -1,5 +1,11 @@
 <div class="container">
   <div class="row">
+    <div class="col s12">
+      <h3 class="center">
+        <span>{{ producto.Nombre }}</span>
+      </h3>
+      <hr />
+    </div>
     <div class="col s6 imagen">
       <div class="center card card-det bg-transparent">
         <img
@@ -10,12 +16,6 @@
     </div>
     <div class="col s6">
       <div class="row">
-        <div class="col s12">
-          <h3 class="center">
-            <span>{{ producto.Nombre }}</span>
-          </h3>
-          <hr />
-        </div>
         <div class="col s12">
           <h5 class="center">Precio {{ producto.Precio | currency }}</h5>
         </div>
@@ -76,10 +76,37 @@
   </div>
 </div>
 <div class="center container">
-  <h4>Productos Similares</h4>
+  <h4>Productos Similares De La Categoria {{ producto.Categoria }}</h4>
   <hr />
-</div>
-<div class="container center">
-  <h4>Comentarios</h4>
-  <hr />
+  <div class="row">
+    <div *ngFor="let p of productosSimilares">
+      <div
+        class="col s6 m4 l3"
+        routerLink="/administracion/detalles-producto/{{ p.Id }}"
+      >
+        <div class="card blue darken-2">
+          <div class="card-image white darken-2">
+            <img src="{{ p.Imagen }}" class="imgCard" />
+
+            <a
+              class="
+                carro
+                btn-floating
+                halfway-fab
+                waves-effect waves-light
+                red
+              "
+              ><i class="material-icons">add_shopping_cart</i></a
+            >
+          </div>
+          <div class="card-content">
+            <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
+            <h6 class="center">{{ p.Precio | currency }}</h6>
+            <br />
+            <p class="center">{{ p.Descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

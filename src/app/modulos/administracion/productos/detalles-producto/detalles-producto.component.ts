@@ -10,21 +10,33 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 })
 export class DetallesProductoComponent implements OnInit {
   id:string='';
+  filter:string='';
+  
+  productosSimilares:ModeloProducto[]=[];
   producto:ModeloProducto = new ModeloProducto;
   constructor(private servicioProducto: ProductoService,    
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];    
+    this.id = this.route.snapshot.params['id'];  
     this.BuscarProducto();
-    
-  }
+    }
 
   BuscarProducto(){
     this.servicioProducto.ConsultarProductosPorId(this.id).subscribe((datos: ModeloProducto)=>{
       this.producto=datos;
-    },(error:any)=>{
+      this.filter=String(this.producto.Categoria)
+      this.ProductosSimilares(this.filter);
+      },(error:any)=>{
       alert('error al buscar producto');
+    })
+  }
+
+  ProductosSimilares(filter:string){
+    this.servicioProducto.ConsultarProductosPorFilter(filter).subscribe((datos:ModeloProducto[])=>{
+      this.productosSimilares = datos;
+    },(error: any)=>{
+      alert(error)
     })
   }
 }

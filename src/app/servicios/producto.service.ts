@@ -19,7 +19,7 @@ export class ProductoService {
     return this.http.get<ModeloProducto[]>(`${this.url}/productos`);
   }
 
-  ConsultarProductosPorId(id:string): Observable<ModeloProducto> {
+  ConsultarProductosPorId(id: string): Observable<ModeloProducto> {
     return this.http.get<ModeloProducto>(`${this.url}/productos/${id}`);
   }
 
@@ -47,7 +47,7 @@ export class ProductoService {
     })
   }
 
-  ConsultarProductosPorFilter(filter:string): Observable<ModeloProducto[]> {
+  ConsultarProductosPorFilter(filter: string): Observable<ModeloProducto[]> {
     return this.http.get<ModeloProducto[]>(`${this.url}/productos?filter[where][Categoria]=${filter}`);
-  } 
+  }
 }

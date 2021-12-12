@@ -2,30 +2,43 @@
   <a class="carousel-item" href="#five!"><img src="./assets/bannergeek.JPG"></a>
 </div>
 
-<br>
-<h3 class="center">Productos Destacados</h3>
-<br>
+  <br />
+  <h3 class="center">Productos Destacados</h3>
+  <br />
 
-<div class="container">
-  <div class="row">
-    <div *ngFor='let p of ListaProductos'>
-      <div class="col s6 m4 l3">
-        <div class="card">
-          <div class="card-image">
-            <img src="{{p.Imagen}}" class="imgCard">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let p of ListaProductos">
+        <div
+          class="col s6 m4 l3"
+          routerLink="/administracion/detalles-producto/{{ p.Id }}"
+        >
+          <div class="card blue darken-2">
+            <div class="card-image white darken-2">
+              <img src="{{ p.Imagen }}" class="imgCard" />
 
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i
-                class="material-icons">add_shopping_cart</i></a>
-          </div>
-          <div class="card-content">
-            <h6>{{p.Nombre}}</h6>
-            <h6>{{p.Precio | currency}}</h6>
-            <br>
-            <p>{{p.Descripcion}}</p>
+              <a
+                class="
+                  carro
+                  btn-floating
+                  halfway-fab
+                  waves-effect waves-light
+                  red
+                "
+                ><i class="material-icons">add_shopping_cart</i></a
+              >
+            </div>
+            <div class="card-content">
+              <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
+              <h6 class="center">{{ p.Precio | currency }}</h6>
+              <br />
+              <p class="center">{{ p.Descripcion }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <br />
   </div>
   <br>
 </div>

@@ -1,0 +1,112 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <h3 class="center">
+        <span>{{ producto.Nombre }}</span>
+      </h3>
+      <hr />
+    </div>
+    <div class="col s6 imagen">
+      <div class="center card card-det bg-transparent">
+        <img
+          src="{{ producto.Imagen }}"
+          alt="{{ producto.Imagen }}{{ producto.Descripcion }}"
+        />
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="row">
+        <div class="col s12">
+          <h5 class="center">Precio {{ producto.Precio | currency }}</h5>
+        </div>
+        <div class="col s12">
+          <h5 class="center">Unidades Disponibles {{ producto.Stock }}</h5>
+        </div>
+      </div>
+      <div>
+        <h3 class="center">Descripcion</h3>
+      </div>
+      <hr />
+      <div>
+        <h6 class="center">{{ producto.Descripcion }}</h6>
+      </div>
+      <div class="btn-group botones" role="group">
+        <div class="col s6 center">
+          <a
+            routerLink="/administracion/crear-producto"
+            class="btn-small aCreate yellow darken-4"
+            ><i class="material-icons">library_add</i><span> Añadir</span></a
+          >
+        </div>
+        <div class="col s6 center">
+          <a
+            routerLink="/administracion/crear-producto"
+            class="btn-small aCreate green darken-2"
+            ><i class="material-icons">attach_money</i>Financiar</a
+          >
+        </div>
+      </div>
+      <hr />
+      <h4 class="center">Metodos De Pago</h4>
+      <hr />
+      <div class="row">
+        <div class="col s4 center">
+          <a href="#"
+            ><i class="material-icons metpay yellow-text text-darken-1"
+              >credit_card</i
+            ></a
+          >
+        </div>
+        <div class="col s4 center">
+          <a href="#"
+            ><i class="material-icons metpay yellow-text text-darken-1"
+              >payments</i
+            ></a
+          >
+        </div>
+        <div class="col s4 center">
+          <a href="#"
+            ><i class="material-icons metpay yellow-text text-darken-1"
+              >monetization_on</i
+            ></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="center container">
+  <h4>Productos Similares De La Categoria {{ producto.Categoria }}</h4>
+  <hr />
+  <div class="row">
+    <div *ngFor="let p of productosSimilares">
+      <div
+        class="col s6 m4 l3"
+        routerLink="/administracion/detalles-producto/{{ p.Id }}"
+      >
+        <div class="card blue darken-2">
+          <div class="card-image white darken-2">
+            <img src="{{ p.Imagen }}" class="imgCard" />
+
+            <a
+              class="
+                carro
+                btn-floating
+                halfway-fab
+                waves-effect waves-light
+                red
+              "
+              ><i class="material-icons">add_shopping_cart</i></a
+            >
+          </div>
+          <div class="card-content">
+            <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
+            <h6 class="center">{{ p.Precio | currency }}</h6>
+            <br />
+            <p class="center">{{ p.Descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

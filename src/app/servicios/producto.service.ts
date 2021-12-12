@@ -47,4 +47,7 @@ export class ProductoService {
     })
   }
 
+  ConsultarProductosPorFilter(filter:string): Observable<ModeloProducto[]> {
+    return this.http.get<ModeloProducto[]>(`${this.url}/productos?filter[where][Categoria]=${filter}`);
+  } 
 }

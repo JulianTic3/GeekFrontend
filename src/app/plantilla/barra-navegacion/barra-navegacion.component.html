@@ -1,16 +1,21 @@
 <nav>
   <div class="nav-wrapper cyan">
     <a routerLink="/inicio" class="brand-logo"
-      ><img class="left" src="./assets/Logos/LogoBlack.png" id="logo" />
+      ><img class="left" src="./assets/Logos/LogoBlack.png" id="logo">
       <button data-target="slide-out" class="btn sidenav-trigger cyan darken-2">
-        ¿Quienes somos?<i class="material-icons left"></i></button
+        ¿Quienes somos?<i class="material-icons"></i></button
     ></a>
     <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"
       ><i class="material-icons">menu</i></a
     >
     <ul class="right hide-on-med-and-down">
-      <li *ngIf="sesionIniciada">
+      <li>
         <a routerLink="/inicio">Home<i class="material-icons left">home</i></a>
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a class="dropdown-trigger" data-target="dropdown2">
+          Categorías<i class="material-icons left">list</i></a
+        >
       </li>
       <li *ngIf="sesionIniciada">
         <a routerLink="/administracion/buscar-producto"
@@ -28,18 +33,13 @@
         >
       </li>
       <li *ngIf="sesionIniciada">
-        <a routerLink="/pedidos/crear-pedido"
+        <a routerLink="/pedidos/carrito-productos"
           >Pedido<i class="material-icons left">receipt_long</i></a
         >
       </li>
       <li *ngIf="!sesionIniciada">
         <a routerLink="/administracion/crear-persona"
           >Registrarse<i class="material-icons left">person_add</i></a
-        >
-      </li>
-      <li *ngIf="sesionIniciada">
-        <a routerLink="/seguridad/cerrar-sesion"
-          >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
         >
       </li>
       <li *ngIf="sesionIniciada">
@@ -82,20 +82,64 @@
 <ul id="dropdown1" class="dropdown-content">
   <li>
     <a routerLink="/administracion/editar-persona"
-      ><i class="material-icons"></i>Editar mis datos</a
+      ><i class="material-icons">edit</i>Editar mis datos</a
     >
   </li>
   <li class="divider" tabindex="-2"></li>
   <li>
-    <a routerLink="#!"><i class="material-icons"></i>Eliminar mi Registro</a>
+    <a class="waves-effect waves-light modal-trigger" href="#modal1"
+      ><i class="material-icons">delete</i>Eliminar Registro</a
+    >
   </li>
   <li class="divider" tabindex="-2"></li>
   <li>
     <a routerLink="/seguridad/cerrar-sesion"
-      >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
+      ><i class="material-icons prefix">power_settings_new</i>Cerrar Sesión</a
     >
   </li>
 </ul>
+
+<ul id="dropdown2" class="dropdown-content">
+  <li>
+    <a routerLink="/administracion/productos"
+      ><i class="material-icons prefix">laptop_chromebook</i>Computadores</a
+    >
+  </li>
+  <li class="divider" tabindex="-2"></li>
+  <li>
+    <a routerLink="//administracion/productos"
+      ><i class="material-icons">tv</i>Electrodomésticos</a
+    >
+  </li>
+  <li class="divider" tabindex="-2"></li>
+  <li>
+    <a routerLink="/administracion/productos"
+      ><i class="material-icons prefix">watch</i>Relojes</a
+    >
+  </li>
+  <li class="divider" tabindex="-2"></li>
+  <li>
+    <a
+      class="waves-effect waves-light modal-trigger"
+      href="/administracion/productos"
+      ><i class="material-icons">speaker</i>Sonido</a
+    >
+  </li>
+</ul>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Está seguro de eliminar su Registro de Geek JC?</h4>
+  </div>
+  <div class="modal-footer">
+    <a href="/administracion/eliminar-persona" class="btn-large red"
+      ><i class="material-icons">delete</i> Si! Eliminar</a
+    >
+    <a href="/inicio" class="btn-large cyan"
+      ><i class="material-icons">cancel</i> Cancelar</a
+    >
+  </div>
+</div>
 
 <ul class="sidenav" id="mobile-demo">
   <li *ngIf="sesionIniciada">
@@ -119,17 +163,12 @@
   </li>
   <li *ngIf="sesionIniciada">
     <a routerLink="/pedidos/crear-pedido"
-      >Pedidos<i class="material-icons left">receipt_long</i></a
+      >Pedido<i class="material-icons left">receipt_long</i></a
     >
   </li>
   <li *ngIf="!sesionIniciada">
     <a routerLink="/administracion/crear-persona"
       >Registrarse<i class="material-icons left">person_add</i></a
-    >
-  </li>
-  <li *ngIf="sesionIniciada">
-    <a routerLink="/seguridad/cerrar-sesion"
-      >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
     >
   </li>
 </ul>

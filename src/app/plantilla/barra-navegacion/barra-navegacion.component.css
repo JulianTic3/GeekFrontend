@@ -20,3 +20,23 @@ h4{
 #slide-out{
   background-color: rgb(91, 208, 243);
 }
+
+.dropdown-content{
+  width: 200px !important;
+}
+
+#dropdown2{
+  width: 240px !important;
+  margin-top: 10px !important;
+}
+
+#modal1{
+background-color: rgb(240, 118, 143);
+width: 600px;
+height: 220px;
+color: rgb(252, 248, 248);
+}
+
+.modal-footer{
+  background-color: rgb(240, 118, 143);
+}

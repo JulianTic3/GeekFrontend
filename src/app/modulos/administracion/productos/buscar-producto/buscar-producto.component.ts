@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModeloProducto } from 'src/app/modelos/producto.modelo';
 import { ProductoService } from 'src/app/servicios/producto.service';
+declare const M: any;
 
 @Component({
   selector: 'app-buscar-producto',

@@ -13,20 +13,20 @@ export class BarraNavegacionComponent implements OnInit {
 
   sesionIniciada: boolean = false;
   subs: Subscription = new Subscription();
-  nombre: string="";
+  nombre: string = "";
 
   ngAfterViewInit() {
     var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
+    var elem = document.querySelectorAll('.modal');
+    var instance = M.Modal.init(elem);
   };
-
   constructor(private seguridadServicio: SeguridadService) { }
 
   ngOnInit(): void {
-    this.subs = this.seguridadServicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar)=>{
-     this.sesionIniciada=datos.EstaIdentificado;
-     this.nombre=this.seguridadServicio.ObtenerNombre();
+    this.subs = this.seguridadServicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar) => {
+      this.sesionIniciada = datos.EstaIdentificado;
+      this.nombre = this.seguridadServicio.ObtenerNombre();
     })
   }
-
 }

@@ -48,6 +48,14 @@ export class AdministracionService {
         headers: new HttpHeaders(),
       })
   }
+
+  EliminarPersona(id: string): Observable<any> {
+    return this.http.delete<ModeloPersona>(`${this.url}/personas/${id}`, {
+      headers: new HttpHeaders({
+      }),
+    })
+  }
+
   ConsultarPersonaPorId(id: string): Observable<ModeloPersona> {
     return this.http.get<ModeloPersona>(`${this.url}/personas/${id}`);
   }

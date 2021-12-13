@@ -1,88 +1,135 @@
 <nav>
-      <div class="nav-wrapper cyan">
-            <a routerLink="/inicio" class="brand-logo"><img src="./assets/Logos/LogoBlack.png" id="logo"><button
-                        data-target="slide-out" class="sidenav-trigger cyan">Quienes somos<i
-                              class="material-icons left"></i></button></a>
-            <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                  <li *ngIf="sesionIniciada"><a routerLink="/inicio">Home<i class="material-icons left">home</i></a>
-                  </li>
-                  <li *ngIf="sesionIniciada"><a routerLink="/administracion/buscar-producto">Productos<i
-                                    class="material-icons left">dashboard</i></a>
-                  </li>
-                  <li *ngIf="sesionIniciada"><a routerLink="/cliente/contacto">contacto<i
-                                    class="material-icons left">contact_mail</i></a>
-                  </li>
-                  <li *ngIf="!sesionIniciada"><a routerLink="/seguridad/identificacion">Iniciar Sesión<i
-                                    class="material-icons left">account_circle</i></a>
-                  </li>
-                  <li *ngIf="sesionIniciada"><a routerLink="/mobile.html">Carrito<i
-                                    class="material-icons left">shopping_cart</i></a>
-                  </li>
-                  <li *ngIf="!sesionIniciada"><a routerLink="/administracion/crear-persona">Registrarse<i
-                                    class="material-icons left">person_add</i></a>
-                  </li>
-                  <li *ngIf="sesionIniciada"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesión<i
-                                    class="material-icons left">power_settings_new</i></a>
-                  </li>
-                  <li *ngIf="sesionIniciada"><a class='dropdown-trigger' data-target='dropdown1'>
-                              {{nombre}}<i class="material-icons left">person</i></a>
-                  </li>
-            </ul>
-      </div>
+  <div class="nav-wrapper cyan">
+    <a routerLink="/inicio" class="brand-logo"
+      ><img class="left" src="./assets/Logos/LogoBlack.png" id="logo" />
+      <button data-target="slide-out" class="btn sidenav-trigger cyan darken-2">
+        ¿Quienes somos?<i class="material-icons left"></i></button
+    ></a>
+    <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"
+      ><i class="material-icons">menu</i></a
+    >
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="sesionIniciada">
+        <a routerLink="/inicio">Home<i class="material-icons left">home</i></a>
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a routerLink="/administracion/buscar-producto"
+          >Productos<i class="material-icons left">dashboard</i></a
+        >
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a routerLink="/cliente/contacto"
+          >contacto<i class="material-icons left">contact_mail</i></a
+        >
+      </li>
+      <li *ngIf="!sesionIniciada">
+        <a routerLink="/seguridad/identificacion"
+          >Iniciar Sesión<i class="material-icons left">account_circle</i></a
+        >
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a routerLink="/pedidos/crear-pedido"
+          >Pedido<i class="material-icons left">receipt_long</i></a
+        >
+      </li>
+      <li *ngIf="!sesionIniciada">
+        <a routerLink="/administracion/crear-persona"
+          >Registrarse<i class="material-icons left">person_add</i></a
+        >
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a routerLink="/seguridad/cerrar-sesion"
+          >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
+        >
+      </li>
+      <li *ngIf="sesionIniciada">
+        <a class="dropdown-trigger" data-target="dropdown1">
+          {{ nombre }}<i class="material-icons left">person</i></a
+        >
+      </li>
+    </ul>
+  </div>
 </nav>
 
 <div id="slide-out" class="sidenav">
-      <div class="user-view">
-            <h4 class="center">HISTORIA</h4>
-            <p>Nuestra empresa nació como una compañía familiar en un pequeño municipio de 
-                  Cundinamarca, llamado Geek, donde iniciamos personalizando estampados en camisetas.
-                  Debido a la buena acojida, nos vimos en la necesidad de crecer tanto físicamente como
-                  de manera virtual, hasta llegar a lo que somos en la atualidad, una empresa que personaliza todo tipo de productos de acuerdo a los gustos de nuestros clientes.
-
-            </p>
-      </div>
-      <div class="divider"></div>
-      <div class="user-view">
-            <h4 class="center">MISION</h4>
-            <p>Personalizamos productos, cumplimos deseos.</p>
-      </div>
-      <div class="divider"></div>
-      <div class="user-view">
-            <h4 class="center">VISION</h4>
-            <p>En 2025 la empresa estará entre las 5 mejores empresas de Colombia
-            destacándose por su excelente servicio y cumplitmiento de los deseos de los clientes.</p>
-      </div>
+  <div class="user-view">
+    <h4 class="center">HISTORIA</h4>
+    <p>
+      Nuestra empresa nació como una compañía familiar en un pequeño municipio
+      de Cundinamarca, llamado Geek, donde iniciamos personalizando estampados
+      en camisetas. Debido a la buena acojida, nos vimos en la necesidad de
+      crecer tanto físicamente como de manera virtual, hasta llegar a lo que
+      somos en la atualidad, una empresa que personaliza todo tipo de productos
+      de acuerdo a los gustos de nuestros clientes.
+    </p>
+  </div>
+  <div class="divider"></div>
+  <div class="user-view">
+    <h4 class="center">MISION</h4>
+    <p>Personalizamos productos, cumplimos deseos.</p>
+  </div>
+  <div class="divider"></div>
+  <div class="user-view">
+    <h4 class="center">VISION</h4>
+    <p>
+      En 2025 la empresa estará entre las 5 mejores empresas de Colombia
+      destacándose por su excelente servicio y cumplitmiento de los deseos de
+      los clientes.
+    </p>
+  </div>
 </div>
 
-<ul id='dropdown1' class='dropdown-content'>
-      <li><a routerLink="/administracion/editar-persona"><i class="material-icons"></i>Editar mis datos</a></li>
-      <li class="divider" tabindex="-2"></li>
-      <li><a routerLink="#!"><i class="material-icons"></i>Eliminar mi Registro</a></li>
-      <li class="divider" tabindex="-2"></li>
-      <li><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesión<i
-                        class="material-icons left">power_settings_new</i></a></li>
+<ul id="dropdown1" class="dropdown-content">
+  <li>
+    <a routerLink="/administracion/editar-persona"
+      ><i class="material-icons"></i>Editar mis datos</a
+    >
+  </li>
+  <li class="divider" tabindex="-2"></li>
+  <li>
+    <a routerLink="#!"><i class="material-icons"></i>Eliminar mi Registro</a>
+  </li>
+  <li class="divider" tabindex="-2"></li>
+  <li>
+    <a routerLink="/seguridad/cerrar-sesion"
+      >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
+    >
+  </li>
 </ul>
 
-
 <ul class="sidenav" id="mobile-demo">
-      <li *ngIf="sesionIniciada"><a routerLink="/inicio">Home<i class="material-icons left">home</i></a>
-      </li>
-      <li *ngIf="!sesionIniciada"><a routerLink="/administracion/buscar-producto">Productos<i
-                        class="material-icons left">dashboard</i></a>
-      <li *ngIf="sesionIniciada"><a routerLink="/cliente/contacto">contacto<i
-                        class="material-icons left">contact_mail</i></a>
-      </li>
-      <li *ngIf="!sesionIniciada"><a routerLink="/seguridad/identificacion">Iniciar Sesión<i
-                        class="material-icons left">account_circle</i></a>
-      </li>
-      <li *ngIf="sesionIniciada"><a routerLink="/mobile.html">Carrito<i
-                        class="material-icons left">shopping_cart</i></a>
-      </li>
-      <li *ngIf="!sesionIniciada"><a routerLink="/administracion/crear-persona">Registrarse<i
-                        class="material-icons left">person_add</i></a>
-      </li>
-      <li *ngIf="sesionIniciada"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesión<i
-                        class="material-icons left">power_settings_new</i></a>
-      </li>
+  <li *ngIf="sesionIniciada">
+    <a routerLink="/inicio">Home<i class="material-icons left">home</i></a>
+  </li>
+  <li *ngIf="!sesionIniciada">
+    <a routerLink="/administracion/buscar-producto"
+      >Productos<i class="material-icons left">dashboard</i></a
+    >
+  </li>
+
+  <li *ngIf="sesionIniciada">
+    <a routerLink="/cliente/contacto"
+      >contacto<i class="material-icons left">contact_mail</i></a
+    >
+  </li>
+  <li *ngIf="!sesionIniciada">
+    <a routerLink="/seguridad/identificacion"
+      >Iniciar Sesión<i class="material-icons left">account_circle</i></a
+    >
+  </li>
+  <li *ngIf="sesionIniciada">
+    <a routerLink="/pedidos/crear-pedido"
+      >Pedidos<i class="material-icons left">receipt_long</i></a
+    >
+  </li>
+  <li *ngIf="!sesionIniciada">
+    <a routerLink="/administracion/crear-persona"
+      >Registrarse<i class="material-icons left">person_add</i></a
+    >
+  </li>
+  <li *ngIf="sesionIniciada">
+    <a routerLink="/seguridad/cerrar-sesion"
+      >Cerrar Sesión<i class="material-icons left">power_settings_new</i></a
+    >
+  </li>
 </ul>

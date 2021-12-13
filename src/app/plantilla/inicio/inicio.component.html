@@ -1,7 +1,9 @@
 <div class="carousel carousel-slider">
-  <a class="carousel-item" href="#five!"><img src="./assets/bannergeek.JPG"></a>
+  <a class="carousel-item" href="#five!"
+    ><img src="./assets/bannergeek.JPG"
+  /></a>
 </div>
-
+<div>
   <br />
   <h3 class="center">Productos Destacados</h3>
   <br />
@@ -9,13 +11,13 @@
   <div class="container">
     <div class="row">
       <div *ngFor="let p of ListaProductos">
-        <div
-          class="col s6 m4 l3"
-          routerLink="/administracion/detalles-producto/{{ p.Id }}"
-        >
+        <div class="col s6 m4 l3">
           <div class="card blue darken-2">
             <div class="card-image white darken-2">
-              <img src="{{ p.Imagen }}" class="imgCard" />
+              <img
+                src="{{ p.Imagen }}"
+                routerLink="/administracion/detalles-producto/{{ p.Id }}"
+              />
 
               <a
                 class="
@@ -25,11 +27,17 @@
                   waves-effect waves-light
                   red
                 "
+                routerLink="/pedidos/carrito-compras/{{ p.Id }}"
                 ><i class="material-icons">add_shopping_cart</i></a
               >
             </div>
-            <div class="card-content">
-              <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
+            <div
+              class="card-content"
+              routerLink="/administracion/detalles-producto/{{ p.Id }}"
+            >
+              <h6 class="white-text text-darken-1 center">
+                {{ p.Nombre }}
+              </h6>
               <h6 class="center">{{ p.Precio | currency }}</h6>
               <br />
               <p class="center">{{ p.Descripcion }}</p>
@@ -40,5 +48,5 @@
     </div>
     <br />
   </div>
-  <br>
+  <br />
 </div>

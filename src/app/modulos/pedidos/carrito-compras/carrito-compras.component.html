@@ -1,0 +1,47 @@
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Imagen</th>
+      <th>Valor</th>
+    </tr>
+    <tr *ngFor="let p of pedido">
+      <td>{{ p.Nombre }}</td>
+      <td>
+        <input
+          formControlName="Cantidad"
+          id="Cantidad"
+          type="number"
+          class="activate"
+          value="1"
+        />
+      </td>
+      <td>
+        <img src="{{ p.Imagen }}" alt="{{ p.Imagen }}{{ p.Descripcion }}" />
+      </td>
+      <td>{{ producto.Precio | currency }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>
+        <a class="btn green darken-2"
+          ><i class="material-icons left">attach_money</i>Comprar</a
+        >
+      </td>
+      <td>
+        <input
+          formControlName="total"
+          id="total"
+          type="number"
+          class="activate"
+          value="total"
+          placeholder="Total $"
+          disabled
+        />
+      </td>
+    </tr>
+  </table>
+  <div class="right comprar"></div>
+</div>

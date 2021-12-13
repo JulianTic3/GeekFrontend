@@ -33,14 +33,14 @@
       <div class="btn-group botones" role="group">
         <div class="col s6 center">
           <a
-            routerLink="/administracion/crear-producto"
+            routerLink="/pedidos/carrito-compras/{{ producto.Id }}"
             class="btn-small aCreate yellow darken-4"
             ><i class="material-icons">library_add</i><span> Añadir</span></a
           >
         </div>
         <div class="col s6 center">
           <a
-            routerLink="/administracion/crear-producto"
+            routerLink="/pedidos/crear-pedido"
             class="btn-small aCreate green darken-2"
             ><i class="material-icons">attach_money</i>Financiar</a
           >
@@ -80,13 +80,14 @@
   <hr />
   <div class="row">
     <div *ngFor="let p of productosSimilares">
-      <div
-        class="col s6 m4 l3"
-        routerLink="/administracion/detalles-producto/{{ p.Id }}"
-      >
+      <div class="col s6 m4 l3">
         <div class="card blue darken-2">
           <div class="card-image white darken-2">
-            <img src="{{ p.Imagen }}" class="imgCard" />
+            <img
+              src="{{ p.Imagen }}"
+              class="imgCard"
+              routerLink="/administracion/detalles-producto/{{ p.Id }}"
+            />
 
             <a
               class="
@@ -96,10 +97,14 @@
                 waves-effect waves-light
                 red
               "
+              routerLink="/pedidos/carrito-compras"
               ><i class="material-icons">add_shopping_cart</i></a
             >
           </div>
-          <div class="card-content">
+          <div
+            class="card-content"
+            routerLink="/administracion/detalles-producto/{{ p.Id }}"
+          >
             <h6 class="white-text text-darken-1 center">{{ p.Nombre }}</h6>
             <h6 class="center">{{ p.Precio | currency }}</h6>
             <br />

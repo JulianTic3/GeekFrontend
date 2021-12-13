@@ -20,9 +20,9 @@ h3 {
 .card {
   min-height: 430px;
 }
-h3{
-    font-weight: 500;
-    color: rgb(19, 196, 98);
+h3 {
+  font-weight: 500;
+  color: rgb(19, 196, 98);
 }
 .card {
   box-shadow: 01px 1px 10px rgba(0, 0, 0, 0.4);
@@ -40,28 +40,23 @@ h3{
   border-radius: 14px;
   background-color: green !important;
 }
-.card:hover{
-box-shadow: 5px 5px 20px rgba(0,0,0,0.6);
-transform: translateY(-5%) ;
-border-radius: 14px;
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5%);
+  border-radius: 14px;
 }
 
-.collapsible-header{
-    background-color: rgb(196, 252, 249);
+.collapsible-header {
+  background-color: rgb(196, 252, 249);
 }
 
-.collapsible-body{
-background-color: rgb(248, 243, 228);
+.collapsible-body {
+  background-color: rgb(248, 243, 228);
 }
 
-.img{
-    width: 200px;
-}
-
-.carousel{
-    animation-duration: 1;
-    animation-direction: normal;
-    inset: 10px;
-    height: 400px;
-    background-color: rgb(161, 225, 250);
+.carousel {
+  animation-duration: 1;
+  animation-direction: normal;
+  max-height: 400px;
+  background-color: rgb(161, 225, 250);
 }
